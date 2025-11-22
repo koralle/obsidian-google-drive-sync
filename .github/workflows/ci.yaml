@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  format:
+  biome:
     runs-on: ubuntu-24.04
 
     steps:
@@ -19,10 +19,10 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/cache-and-install
 
-      - name: Format
+      - name: Biome
         shell: bash
         run: |
-          pnpm run format:check
+          pnpm run check:ci
 
   typecheck:
     runs-on: ubuntu-24.04

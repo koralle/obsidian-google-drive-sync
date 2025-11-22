@@ -1,0 +1,78 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "linter": {
+    "enabled": true,
+    "includes": [
+      // TypeScript
+      "src/**/*.{ts,tsx}",
+      "scripts/**/*.ts",
+      "build.ts",
+      "env.d.ts",
+
+      // JSON
+      "package.json",
+      "tsconfig.json",
+      "manifest.json",
+      "versions.json",
+      "biome.jsonc",
+
+      // CSS
+      "styles.css"
+    ],
+    "rules": {
+      "recommended": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "includes": [
+      // TypeScript
+      "src/**/*.{ts,tsx}",
+      "scripts/**/*.ts",
+      "build.ts",
+      "env.d.ts",
+
+      // JSON
+      "package.json",
+      "tsconfig.json",
+      "manifest.json",
+      "versions.json",
+      "biome.jsonc",
+
+      // CSS
+      "styles.css"
+    ],
+    "actions": {
+      "recommended": true
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "includes": [
+      // TypeScript
+      "src/**/*.{ts,tsx}",
+      "scripts/**/*.ts",
+      "build.ts",
+      "env.d.ts",
+
+      // JSON
+      "package.json",
+      "tsconfig.json",
+      "manifest.json",
+      "versions.json",
+      "biome.jsonc",
+
+      // CSS
+      "styles.css"
+    ],
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "useEditorconfig": true
+  }
+}
