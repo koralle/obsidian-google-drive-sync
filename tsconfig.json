@@ -9,10 +9,7 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "strictNullChecks": true,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
 
     "strict": true,
     "allowUnusedLabels": false,
@@ -31,10 +28,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": [
-    "src/**/*.{ts,tsx}",
-    "scripts/**/*.{ts,tsx}",
-    "build.ts",
-    "env.d.ts"
-  ]
+  "include": ["src/**/*.{ts,tsx}", "scripts/**/*.{ts,tsx}", "build.ts", "env.d.ts"]
 }
