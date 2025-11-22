@@ -34,7 +34,7 @@ jobs:
       - name: Setup
         uses: ./.github/composite-actions/cache-and-install
 
-      - name: Format
+      - name: Typecheck
         shell: bash
         run: |
           pnpm run typecheck
