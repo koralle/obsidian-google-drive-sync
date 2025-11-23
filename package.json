@@ -1,7 +1,7 @@
 {
-  "name": "@koralle/obsidian-plugin-development-template",
+  "name": "@koralle/obsidian-google-drive-sync",
   "version": "1.0.0",
-  "description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+  "description": "A plugin of Obsidian syncing data between PC and mobile devices.",
   "packageManager": "pnpm@10.23.0",
   "scripts": {
     "dev": "tsx build.ts --watch",
