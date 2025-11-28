@@ -1,0 +1,13 @@
+packages:
+  - obsidian-plugin
+  - web
+
+catalog:
+  '@biomejs/biome': 2.3.7
+  '@types/node': ^24.10.1
+  '@typescript/native-preview': 7.0.0-dev.20251121.1
+  typescript: ^5.9.3
+
+minimumReleaseAge: 10080
+
+trustPolicy: no-downgrade

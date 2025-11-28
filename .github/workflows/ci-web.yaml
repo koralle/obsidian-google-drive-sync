@@ -20,6 +20,7 @@ jobs:
         uses: ./.github/composite-actions/cache-and-install
 
       - name: Biome
+        working-directory: ./web
         shell: bash
         run: |
           pnpm run check:ci
@@ -35,6 +36,7 @@ jobs:
         uses: ./.github/composite-actions/cache-and-install
 
       - name: Typecheck
+        working-directory: ./web
         shell: bash
         run: |
           pnpm run typecheck

@@ -1,0 +1,52 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Fix with Biome (Obsidian Plugin)
+      root: obsidian-plugin
+      glob:
+        # TypeScript
+        - "src/**/*.{ts.tsx}"
+        - "scripts/**/*.ts"
+        - "build.ts"
+        - "env.d.ts"
+
+        # JSON
+        - "biome.jsonc"
+        - "package.json"
+        - "tsconfig.json"
+        - "versions.json"
+        - "manifest.json"
+
+        # CSS
+        - "styles.css"
+      run: |
+        pnpm biome check {staged_files} \
+          --fix \
+          --no-errors-on-unmatched \
+          --files-ignore-unknown=true \
+          --colors=off
+      stage_fixed: true
+
+    - name: Format with Biome (Web)
+      root: web
+      glob:
+        # TypeScript
+        - "src/**/*.{ts,tsx}"
+        - "next.config.ts"
+        - "next-env.d.ts"
+        - "open-next.config.ts"
+
+        # JSON
+        - "package.json"
+        - "tsconfig.json"
+        - "biome.jsonc"
+
+        # CSS
+        - "src/**/*.css"
+      run: |
+        pnpm biome check {staged_files} \
+          --fix \
+          --no-errors-on-unmatched \
+          --files-ignore-unknown=true \
+          --colors=off
+      stage_fixed: true
