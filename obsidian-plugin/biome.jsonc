@@ -1,17 +1,29 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
-  "files": {
-    "includes": [
-      // JSON
-      "package.json",
-      "tsconfig.json",
-      "biome.jsonc"
-    ]
-  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": true
+    "useIgnoreFile": true,
+    "root": "../"
+  },
+  "files": {
+    "includes": [
+      // TypeScript
+      "src/**/*.{ts,tsx}",
+      "scripts/**/*.ts",
+      "build.ts",
+      "env.d.ts",
+
+      // JSON
+      "package.json",
+      "tsconfig.json",
+      "manifest.json",
+      "versions.json",
+      "biome.jsonc",
+
+      // CSS
+      "styles.css"
+    ]
   },
   "linter": {
     "enabled": true,
