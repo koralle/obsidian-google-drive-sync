@@ -2,10 +2,10 @@
   "files": [],
   "references": [
     {
-      "path": "./obsidian-plugin/tsconfig.json"
+      "path": "./packages/obsidian-plugin/tsconfig.json"
     },
     {
-      "path": "./web/tsconfig.json"
+      "path": "./packages/web/tsconfig.json"
     }
   ]
 }

@@ -2,7 +2,7 @@ pre-commit:
   parallel: true
   jobs:
     - name: Fix with Biome (Obsidian Plugin)
-      root: obsidian-plugin
+      root: apps/obsidian-plugin
       glob:
         # TypeScript
         - "src/**/*.{ts.tsx}"
@@ -28,7 +28,7 @@ pre-commit:
       stage_fixed: true
 
     - name: Format with Biome (Web)
-      root: web
+      root: apps/web
       glob:
         # TypeScript
         - "src/**/*.{ts,tsx}"
