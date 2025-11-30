@@ -11,7 +11,7 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "strictNullChecks": true,
-    "lib": ["esnext"],
+    "lib": ["dom", "dom.iterable", "esnext"],
 
     "strict": true,
     "allowUnusedLabels": false,
@@ -34,16 +34,8 @@
 
     "incremental": true,
 
-    "jsx": "preserve",
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "libReplacement": true
   },
-  "include": [
-    "output/**/*.{ts,tsx}",
-    "orval.config.ts"
-  ],
+  "include": ["src/**/*.ts", "output/**/*.ts", "orval.config.ts"],
   "exclude": ["node_modules"]
 }

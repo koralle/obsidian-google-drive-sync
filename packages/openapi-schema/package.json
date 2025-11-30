@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
+  "exports": {
+    "./endpoints": "./output/obsidian-google-drive-sync.gen.ts",
+    "./models": "./output/model/index.ts"
+  },
   "scripts": {
     "dev": "pnpm run /^.*:compile:watch$/",
     "tsp:compile:watch": "tsp compile src/main.tsp --watch",
