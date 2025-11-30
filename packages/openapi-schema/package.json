@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "pnpm run /^.*:compile:watch$/",
+    "tsp:compile:watch": "tsp compile src/main.tsp --watch",
+    "tsp:format": "tsp format src/main.tsp",
+    "orval:compile:watch": "orval --watch",
+    "typecheck": "tsgo"
+  },
   "dependencies": {
     "@typespec/http": "latest",
     "@typespec/openapi": "latest",
