@@ -2,10 +2,13 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/obsidian-plugin/tsconfig.json"
+      "path": "./apps/obsidian-plugin/tsconfig.json"
     },
     {
-      "path": "./packages/web/tsconfig.json"
+      "path": "./apps/web/tsconfig.json"
+    },
+    {
+      "path": "./packages/openapi-schema/tsconfig.json"
     }
   ]
 }
