@@ -10,6 +10,7 @@
     "@typespec/rest": "latest"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@typescript/native-preview": "catalog:",
     "@typespec/compiler": "latest",
     "orval": "^7.16.1"
