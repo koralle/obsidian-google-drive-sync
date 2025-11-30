@@ -14,7 +14,8 @@
     "@typespec/http": "latest",
     "@typespec/openapi": "latest",
     "@typespec/openapi3": "latest",
-    "@typespec/rest": "latest"
+    "@typespec/rest": "latest",
+    "ky": "^1.14.0"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
