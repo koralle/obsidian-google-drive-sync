@@ -22,6 +22,7 @@
     "@biomejs/biome": "catalog:",
     "@typescript/native-preview": "catalog:",
     "@typespec/compiler": "latest",
+    "better-typescript-lib": "^2.12.0",
     "orval": "^7.16.1"
   }
 }
