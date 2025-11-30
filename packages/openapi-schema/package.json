@@ -10,6 +10,7 @@
     "@typespec/rest": "latest"
   },
   "devDependencies": {
-    "@typespec/compiler": "latest"
+    "@typespec/compiler": "latest",
+    "orval": "^7.16.1"
   }
 }
