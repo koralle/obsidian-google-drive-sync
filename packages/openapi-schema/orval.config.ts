@@ -1,22 +1,28 @@
-import { defineConfig } from 'orval';
+import { defineConfig } from "orval";
 
 export default defineConfig({
-  'Obsidian Google Drive Sync': {
-    input:  {
+  "Obsidian Google Drive Sync": {
+    input: {
       // validation: true,
-      target: './tsp-output/schema/openapi.yaml',
+      target: "./tsp-output/schema/openapi.yaml",
     },
     output: {
-      mode: 'split',
-      client: 'fetch',
-      namingConvention: 'kebab-case',
-      target: './output/endpoints',
-      schemas: './output/model',
-      fileExtension: '.gen.ts',
-      indexFiles: true
+      mode: "split",
+      client: "fetch",
+      namingConvention: "kebab-case",
+      target: "./output/endpoints",
+      schemas: "./output/model",
+      fileExtension: ".gen.ts",
+      indexFiles: true,
+      override: {
+        mutator: {
+          path: "./src/ky-client.ts",
+          name: "apiClient",
+        },
+      },
     },
     hooks: {
-      afterAllFilesWrite: 'biome check --fix'
-    }
+      afterAllFilesWrite: "biome check --fix",
+    },
   },
 });

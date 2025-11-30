@@ -4,6 +4,8 @@
  * Obsidian Google Drive Sync
  * OpenAPI spec version: 0.0.0
  */
+
+import { apiClient } from "../../src/ky-client";
 import type {
   ExchangeAccessTokenRequest,
   ExchangeAccessTokenResponse,
@@ -49,19 +51,13 @@ export const googleDriveAPIExchangeAccessToken = async (
   exchangeAccessTokenRequest: ExchangeAccessTokenRequest,
   options?: RequestInit,
 ): Promise<googleDriveAPIExchangeAccessTokenResponse> => {
-  const res = await fetch(getGoogleDriveAPIExchangeAccessTokenUrl(), {
-    ...options,
-    method: "POST",
-    headers: { "Content-Type": "application/json", ...options?.headers },
-    body: JSON.stringify(exchangeAccessTokenRequest),
-  });
-
-  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
-
-  const data: googleDriveAPIExchangeAccessTokenResponse["data"] = body ? JSON.parse(body) : {};
-  return {
-    data,
-    status: res.status,
-    headers: res.headers,
-  } as googleDriveAPIExchangeAccessTokenResponse;
+  return apiClient<googleDriveAPIExchangeAccessTokenResponse>(
+    getGoogleDriveAPIExchangeAccessTokenUrl(),
+    {
+      ...options,
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...options?.headers },
+      body: JSON.stringify(exchangeAccessTokenRequest),
+    },
+  );
 };
