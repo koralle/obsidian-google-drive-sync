@@ -116,6 +116,9 @@ importers:
         specifier: latest
         version: 0.76.0(@typespec/compiler@1.6.0(@types/node@24.10.1))(@typespec/http@1.6.0(@typespec/compiler@1.6.0(@types/node@24.10.1)))
     devDependencies:
+      '@typescript/native-preview':
+        specifier: 'catalog:'
+        version: 7.0.0-dev.20251121.1
       '@typespec/compiler':
         specifier: latest
         version: 1.6.0(@types/node@24.10.1)
