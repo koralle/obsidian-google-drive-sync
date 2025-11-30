@@ -118,6 +118,9 @@ importers:
       ky:
         specifier: ^1.14.0
         version: 1.14.0
+      ts-pattern:
+        specifier: ^5.9.0
+        version: 5.9.0
     devDependencies:
       '@biomejs/biome':
         specifier: 'catalog:'
@@ -3943,6 +3946,9 @@ packages:
 
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+
+  ts-pattern@5.9.0:
+    resolution: {integrity: sha512-6s5V71mX8qBUmlgbrfL33xDUwO0fq48rxAu2LBE11WBeGdpCPOsXksQbZJHvHwhrd3QjUusd3mAOM5Gg0mFBLg==}
 
   ts-tqdm@0.8.6:
     resolution: {integrity: sha512-3X3M1PZcHtgQbnwizL+xU8CAgbYbeLHrrDwL9xxcZZrV5J+e7loJm1XrXozHjSkl44J0Zg0SgA8rXbh83kCkcQ==}
@@ -8958,6 +8964,8 @@ snapshots:
   toidentifier@1.0.1: {}
 
   tr46@0.0.3: {}
+
+  ts-pattern@5.9.0: {}
 
   ts-tqdm@0.8.6: {}
 
