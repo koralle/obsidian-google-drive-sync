@@ -1,5 +1,5 @@
-import { match } from "ts-pattern";
 import ky from "ky";
+import { match } from "ts-pattern";
 
 export type HTTPMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
@@ -17,27 +17,16 @@ export const apiClient = async <T>(
   let targetURL = `${baseURL}/${url}`;
 
   if (params) {
-    targetURL += "?" + new URLSearchParams(params);
+    targetURL += `?${new URLSearchParams(params)}`;
   }
 
-  const apiClientBase = ky.extend({ retry: { jitter: true }})
+  const apiClientBase = ky.extend({ retry: { jitter: true } });
 
   const response = match(method)
-    .with(
-      "GET",
-      async () => await apiClientBase.get(targetURL, { body, headers }).json<T>(),
-    )
-    .with(
-      "POST",
-      async () => await apiClientBase.post(targetURL, { body, headers }).json<T>(),
-    )
-    .with(
-      "PUT",
-      async () => await apiClientBase.put(targetURL, { body, headers }).json<T>(),
-    )
-    .with("DELETE", async () =>
-      apiClientBase.delete(targetURL, { body, headers }).json<T>(),
-    )
+    .with("GET", async () => await apiClientBase.get(targetURL, { body, headers }).json<T>())
+    .with("POST", async () => await apiClientBase.post(targetURL, { body, headers }).json<T>())
+    .with("PUT", async () => await apiClientBase.put(targetURL, { body, headers }).json<T>())
+    .with("DELETE", async () => apiClientBase.delete(targetURL, { body, headers }).json<T>())
     .with("PATCH", async () => ky.patch(targetURL, { body, headers }).json<T>())
     .exhaustive();
 

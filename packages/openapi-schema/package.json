@@ -9,9 +9,15 @@
   },
   "scripts": {
     "dev": "pnpm run /^.*:compile:watch$/",
-    "tsp:compile:watch": "tsp compile src/main.tsp --watch",
-    "tsp:format": "tsp format src/main.tsp",
-    "orval:compile:watch": "orval --watch",
+    "dev:tsp": "tsp compile src/main.tsp",
+    "dev:tsp:watch": "tsp compile src/main.tsp --watch",
+    "format:tsp": "tsp format src/**/*.tsp",
+    "format:tsp:check": "tsp format src/**/*.tsp --check",
+    "dev:orval": "orval",
+    "dev:orval:watch": "orval --watch",
+    "check": "biome check",
+    "check:ci": "biome ci",
+    "check:fix": "biome check --fix",
     "typecheck": "tsgo"
   },
   "dependencies": {
