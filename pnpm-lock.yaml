@@ -66,6 +66,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@obsidian-google-drive-sync/openapi-schema':
+        specifier: workspace:*
+        version: link:../../packages/openapi-schema
       '@opennextjs/cloudflare':
         specifier: ^1.11.0
         version: 1.13.1(wrangler@4.50.0)
