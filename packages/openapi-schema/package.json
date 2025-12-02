@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./endpoints": "./output/obsidian-google-drive-sync.gen.ts",
+    "./endpoints": "./output/endpoints/index.ts",
     "./models": "./output/model/index.ts"
   },
   "scripts": {
