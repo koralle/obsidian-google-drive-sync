@@ -1,0 +1,38 @@
+{
+  "name": "@obsidian-google-drive-sync/openapi-schema",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./endpoints": "./output/endpoints/index.ts",
+    "./models": "./output/model/index.ts"
+  },
+  "scripts": {
+    "dev": "pnpm run /^.*:compile:watch$/",
+    "dev:tsp": "tsp compile src/main.tsp",
+    "dev:tsp:watch": "tsp compile src/main.tsp --watch",
+    "format:tsp": "tsp format src/**/*.tsp",
+    "format:tsp:check": "tsp format src/**/*.tsp --check",
+    "dev:orval": "orval",
+    "dev:orval:watch": "orval --watch",
+    "check": "biome check",
+    "check:ci": "biome ci",
+    "check:fix": "biome check --fix",
+    "typecheck": "tsgo"
+  },
+  "dependencies": {
+    "@typespec/http": "latest",
+    "@typespec/openapi": "latest",
+    "@typespec/openapi3": "latest",
+    "@typespec/rest": "latest",
+    "ky": "^1.14.0",
+    "ts-pattern": "^5.9.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@typescript/native-preview": "catalog:",
+    "@typespec/compiler": "latest",
+    "better-typescript-lib": "^2.12.0",
+    "orval": "^7.16.1"
+  }
+}
