@@ -1,0 +1,19 @@
+{
+  "name": "@obsidian-google-drive-sync/api-schema",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev:tsp": "tsp compile src/main.tsp",
+    "dev:tsp-watch": "tsp compile src/main.tsp --watch",
+    "format:tsp:check": "tsp format src/**/*.tsp --check --pretty",
+    "format:tsp:fix": "tsp format src/**/*.tsp"
+  },
+  "dependencies": {
+    "@typespec/compiler": "^1.6.0",
+    "@typespec/http": "^1.6.0",
+    "@typespec/rest": "^0.76.0",
+    "@typespec/openapi": "^1.6.0",
+    "@typespec/openapi3": "^1.6.0"
+  }
+}

@@ -1,6 +1,15 @@
 pre-commit:
   parallel: true
   jobs:
+    - name: Fix with TypeSpec
+      root: packages/api-schema
+      glob:
+        # TypeSpec
+        - "src/**/*.tsp"
+      run: |
+        pnpm tsp format {staged_files}
+      stage_fixed: true
+
     - name: Fix with Biome (Obsidian Plugin)
       root: apps/obsidian-plugin
       glob:
