@@ -24,6 +24,10 @@ model ExchangeAccessTokenResponse {
   expiresIn: expiresIn;
 }
 
+model HealthcheckResponse {
+  message: string;
+}
+
 @error
 model ValidationError {
   code: "VALIDATION_ERROR";
@@ -35,6 +39,19 @@ model InternalServerError {
   code: "INTERNAL_SERVER_ERROR";
   message: errorMessage;
 }
+
+@route("/health")
+@get
+op healthcheck(): {
+  @statusCode statusCode: 200;
+  @body response: HealthcheckResponse;
+} | {
+  @statusCode statusCode: 400;
+  @body error: ValidationError;
+} | {
+  @statusCode statusCode: 500;
+  @body error: InternalServerError;
+};
 
 @route("/access-token")
 namespace GoogleDriveAPI {

@@ -9,6 +9,7 @@ import { apiClient } from "../../src/ky-client";
 import type {
   ExchangeAccessTokenRequest,
   ExchangeAccessTokenResponse,
+  HealthcheckResponse,
   InternalServerError,
   ValidationError,
 } from "../model";
@@ -60,4 +61,39 @@ export const googleDriveAPIExchangeAccessToken = async (
       body: JSON.stringify(exchangeAccessTokenRequest),
     },
   );
+};
+
+export type healthcheckResponse200 = {
+  data: HealthcheckResponse;
+  status: 200;
+};
+
+export type healthcheckResponse400 = {
+  data: ValidationError;
+  status: 400;
+};
+
+export type healthcheckResponse500 = {
+  data: InternalServerError;
+  status: 500;
+};
+
+export type healthcheckResponseSuccess = healthcheckResponse200 & {
+  headers: Headers;
+};
+export type healthcheckResponseError = (healthcheckResponse400 | healthcheckResponse500) & {
+  headers: Headers;
+};
+
+export type healthcheckResponse = healthcheckResponseSuccess | healthcheckResponseError;
+
+export const getHealthcheckUrl = () => {
+  return `/health`;
+};
+
+export const healthcheck = async (options?: RequestInit): Promise<healthcheckResponse> => {
+  return apiClient<healthcheckResponse>(getHealthcheckUrl(), {
+    ...options,
+    method: "GET",
+  });
 };

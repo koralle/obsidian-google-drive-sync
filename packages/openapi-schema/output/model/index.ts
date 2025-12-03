@@ -10,6 +10,7 @@ export * from "./error-message";
 export * from "./exchange-access-token-request";
 export * from "./exchange-access-token-response";
 export * from "./expires-in";
+export * from "./healthcheck-response";
 export * from "./internal-server-error";
 export * from "./internal-server-error-code";
 export * from "./refresh-token";
