@@ -17,6 +17,11 @@ runs:
         cache: pnpm
         cache-dependency-path: pnpm-lock.yaml
 
+    - name: Install safe-chain
+      shell: bash
+      run: |
+        curl -fsSL https://raw.githubusercontent.com/AikidoSec/safe-chain/main/install-scripts/install-safe-chain.sh | sh -s -- --ci
+
     - name: Install dependencies
       shell: bash
       run: |

@@ -9,5 +9,12 @@ catalog:
   typescript: ^5.9.3
 
 minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@next/env'
+  - '@types/react'
+  - '@types/react-dom'
+  - next
+  - react
+  - react-dom
 
 trustPolicy: no-downgrade
